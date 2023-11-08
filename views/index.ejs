@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>UniBurguer</title>
+  <link rel="stylesheet" type="text/css" href="static/index.css"/>
+  <link rel="shortcut icon" href="static/img/favicon.ico"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-100 dark:bg-orange-900">
+
+  <div class="themeRange fixed bg-orange-600 dark:bg-orange-700 w-[70px] h-[35px] rounded-full z-[1000] pl-[2px] pt-[2px] m-6 ease-in duration-300 flex justify-start pr-[2px]">
+    <div class="theme absolute bg-orange-100 dark:bg-orange-900 w-[30px] h-[30px] ml-[2px] mr-[3px] right-[33px] rounded-full pointer-events-auto cursor-pointer ease-in duration-300">
+  
+    </div>
+  </div>
+  
+  <div class="menuColapsSuperiorDiv">
+    <div class="menuColapsSuperior">
+      <svg width="70px" height="70px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path style="stroke: rgb(249 115 22);" d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="menuSuperior overflow-x-auto text-center bg-orange-500 dark:bg-orange-600">
+    <div class="text-gray-100 text-xl" style="width: 100%;">
+      <div class="p-2.5 mt-1 flex items-center">
+        <img class="bi bi-app-indicator px-2 py-1 rounded-md" style="width: 65px;" src="static/img/logo.png"></img>
+        <h1 class="uniText font-bold text-gray-200 text-[30px]">UniBurguer</h1>
+      </div>
+      <div class="my-2 bg-gray-600 h-[4px]"></div>
+      <div 
+        style="margin-bottom: 12px;"
+        class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold"
+        id="subMenuSuperior">
+      </div>
+    </div>
+  </div>
+
+  <div class="modalObservacaoF">
+    <div class="modalBaseF bg-orange-400 dark:bg-orange-600">
+      <div class="bg-orange-600 dark:bg-orange-700" style="
+          width: 96%; 
+          display: flex;
+          border: solid 0px;
+          border-radius: 12px;
+          margin: 14px 0px 14px 2%;
+          padding: 4px;">
+        <div style="width: 50%;">
+          <h1 class="font-bold text-black-800 text-[30px] ml-3">Pedido</h1>
+        </div>
+        <div style="width: 50%; display: flex; justify-content: end;" onclick="fecharModalF()">
+          <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewBox="0 0 32 32">
+            <defs>
+            <style>.cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style>
+            </defs>
+            <title/>
+            <g id="cross">
+            <line class="cls-1" x1="7" x2="25" y1="7" y2="25"/>
+            <line class="cls-1" x1="7" x2="25" y1="25" y2="7"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="modalTextNameF bg-orange-600 dark:bg-orange-700">
+        <label style="margin-right: 12px;">Nome : </label>
+        <input style="
+          background: #ed4f00;
+          border: 0;
+          border-bottom: solid 3px #ff8400;
+          border-radius: 0px;
+          outline: 0;" type="text" placeholder="Seu Nome / Apelido" id="nome">
+      </div>
+      <div class="modalTextF">
+      </div>
+      <div class="finalizarObservacaoF">
+        <button class="finalizar svgDelete mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="finalizarObsF()">
+          Finalizar Compra
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modalObservacao">
+    <div class="modalBase bg-orange-400 dark:bg-orange-600">
+      <div class="bg-orange-600 dark:bg-orange-700" style="
+        width: 96%; 
+        display: flex; 
+        border: solid 0px;
+        border-radius: 12px;
+        margin: 14px 0px 14px 2%;
+        padding: 4px;">
+        <div style="width: 50%;">
+          <h1 class="font-bold text-black-800 text-[30px] ml-3">Observação</h1>
+        </div>
+        <div style="width: 50%; display: flex; justify-content: end;" onclick="fecharModal()">
+          <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewBox="0 0 32 32">
+            <defs>
+            <style>.cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style>
+            </defs>
+            <title/>
+            <g id="cross">
+            <line class="cls-1" x1="7" x2="25" y1="7" y2="25"/>
+            <line class="cls-1" x1="7" x2="25" y1="25" y2="7"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="modalText ">
+        <textarea class="border-orange-600 dark:border-orange-700 focus:border-orange-600 dark:focus:border-orange-700" name="observacao" id="observacao" 
+        style="
+        resize: none;
+        width: 95%;
+        font-size: 30px;
+        height: 245px;
+        font-family: Andale Mono, monospace;"></textarea>
+      </div>
+      <div class="finalizarObservacao" onclick="finalizarObs(this.id)">
+        <button class="finalizar mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu bg-red-500 dark:bg-red-600">
+    <svg width="70px" height="70px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path style="stroke: rgb(249 115 22);" d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-orange-500 dark:bg-orange-600">
+    <div class="text-gray-100 text-xl">
+      <div class="p-2.5 mt-1 flex items-center">
+        <img class="bi bi-app-indicator px-2 py-1 rounded-md" style="width: 65px;" src="static/img/logo.png"></img>
+        <h1 class="font-bold text-gray-200 text-[30px] ml-3">UniBurguer</h1>
+      </div>
+      <div class="my-2 bg-gray-600 h-[4px]"></div>
+      <div 
+        class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold"
+        id="submenu">
+      </div>
+    </div>
+  </div>
+  <div style="display: flex;">
+    <div class="apoio"></div>
+    <div style="margin: 100px 10px 100px 10px; width: 100%;">
+      <div class="itens" id="itens" style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        justify-content: center;
+        justify-items: center; 
+        align-content: space-evenly;
+        grid-gap: 20px;
+        transition: 0.2s;
+        align-items: stretch;">
+      </div>
+    </div>
+  </div>
+  <div class="carrinho bg-orange-400 dark:bg-orange-600">
+    <div class="apoio"></div>
+    <div style="display: flex; width: 100%;">
+      <svg class="sacola" width="70px" height="70px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 11V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V10.9673M10.4 21H13.6C15.8402 21 16.9603 21 17.816 20.564C18.5686 20.1805 19.1805 19.5686 19.564 18.816C20 17.9603 20 16.8402 20 14.6V12.2C20 11.0799 20 10.5198 19.782 10.092C19.5903 9.71569 19.2843 9.40973 18.908 9.21799C18.4802 9 17.9201 9 16.8 9H7.2C6.0799 9 5.51984 9 5.09202 9.21799C4.71569 9.40973 4.40973 9.71569 4.21799 10.092C4 10.5198 4 11.0799 4 12.2V14.6C4 16.8402 4 17.9603 4.43597 18.816C4.81947 19.5686 5.43139 20.1805 6.18404 20.564C7.03968 21 8.15979 21 10.4 21Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3 class="valorTotal text-slate-900 dark:text-white mt-5 text-3xl font-medium tracking-tight">R$0,00</h3>
+    </div>
+    <div >
+      <button class="finalizarPedido mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded opacity-100 cursor-not-allowed">
+        Finalizar Compra
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="static/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+.menu{
+    transition: 0.3s;
+    width: 68px;
+    margin: 10px;
+    position: fixed;
+    left: -78px;
+    cursor: pointer;
+    border: 0px solid;
+    border-radius: 39px;
+    box-shadow: 0 0 15px;
+}
+.menuDark{
+    background: #e51515e0;
+}
+.menuColapsSuperiorDiv{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    z-index: 10;
+}
+.menuColapsSuperior{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(0.7) rotate(90deg);
+    margin-right: 10px;
+    background: #e51515e0;
+    border: 0px solid;
+    border-radius: 39px;
+    margin: 10px;
+    box-shadow: 0 0 35px; 
+}
+.descricao{
+    width: 300px;
+    transition: 0.3s;
+    text-overflow: ellipsis;
+    max-height: 0px;
+    overflow: auto;
+}
+.itemAdd{
+    transition: 0.3s;
+    cursor: pointer;
+}
+.finalizarObservacao, .finalizarObservacaoF{
+    display: flex;
+    justify-content: end;
+    margin-top: 12px;
+}
+.finalizarObservacaoF{
+    margin-top: 0;
+}
+.modalObservacao, .modalObservacaoF{
+    display: none;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    background: #0000009e;
+    z-index: 10;
+    overflow: auto;
+    z-index: 10000;
+}
+.modalText{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.modalTextF{
+    width: 100%;
+    display: block;
+}
+.modalTextNameF{
+    border: solid 0px;
+    border-radius: 12px;
+    background: #ed4f00;
+    padding: 12px;
+    margin: 6px 0px 14px 2%;
+    width: 96%;
+    display: flex;
+}
+.modalBase{
+    margin-top: 10%;
+    transform: scale(0);
+    width: 70%;
+    height: 410px;
+    transition: 0.3s;
+    border: solid 0px;
+    border-radius: 5px;
+    margin-bottom: 10%;
+}
+.modalBaseF{
+    height: 455px;
+    transition: 0.3s;
+    border: solid 0px;
+    border-radius: 5px;
+    margin-top: 10%;
+    transform: scale(0);
+    width: 70%;
+    margin-bottom: 10%;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+textarea, textarea:focus, input, input:focus, select:focus{
+    border: solid 10px;
+    border-radius: 10px;
+    outline: 0;
+}
+.itemAdd:hover{
+    transform: scale(1.2);
+}
+.bg-red-600{
+    background-color: red;
+}
+.item{
+    transition: 0.3s;
+    display: inline-table;
+    max-height: 525px;
+    border: 4px solid;
+    border-color: #ff000024;
+}
+.item:hover{
+    box-shadow: 0 0 20px;
+}
+.carrinho{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    overflow: auto;
+    box-shadow: 0 21px 35px 17px;
+    border-top: solid 5px;
+    border-color: #ff000024;
+}
+.apoio{
+    min-width: 300px;
+    transition: 0.3s;
+}
+.sidebar{
+    z-index: 1;
+    transition: 0.3s;
+    left: -300px;
+    border-right: solid 5px;
+    border-color: #ff000024;
+}
+.finalizar, .finalizarPedido{
+    margin-right: 10px;
+    min-width: 190px;
+}
+.menuSuperior{
+    position: fixed;
+    width: 100%;
+    max-height: 600px;
+    transition: 0.3s;
+    height: 0px;
+    border-bottom: 5px solid;
+    border-color: #ff000024;
+    top: -5px;
+    z-index: 1000;
+}
+@media (prefers-color-scheme: dark) {
+    .dark\:border-orange-700 { --tw-border-opacity: 1; border-color: rgb(194 65 12 / var(--tw-border-opacity)); }
+    .dark\:bg-orange-900 { --tw-bg-opacity: 1; background-color: rgb(124 45 18 / var(--tw-bg-opacity)); }
+    .dark\:bg-orange-600 { --tw-bg-opacity: 1; background-color: rgb(234 88 12 / var(--tw-bg-opacity)); }
+    .dark\:bg-orange-700 { --tw-bg-opacity: 1; background-color: rgb(194 65 12 / var(--tw-bg-opacity)); }
+    .dark\:bg-red-600 { --tw-bg-opacity: 1; background-color: rgb(220 38 38 / var(--tw-bg-opacity)); }
+    .dark\:text-white { --tw-text-opacity: 1; color: rgb(255 255 255 / var(--tw-text-opacity)); }
+    .dark\:focus\:border-orange-700:focus { --tw-border-opacity: 1; border-color: rgb(194 65 12 / var(--tw-border-opacity)); }
+}
