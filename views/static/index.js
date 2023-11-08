@@ -302,7 +302,7 @@ async function buscarItens(id){
     }
     $('.itens').css('opacity', '0')
     const resposta = await $.ajax({
-        url: 'https://gustakx36.pythonanywhere.com/product/ativo',
+        url: 'https://gustakx36.pythonanywhere.com/product/ativo/',
         dataType: 'json',
         method: 'GET'
     });
